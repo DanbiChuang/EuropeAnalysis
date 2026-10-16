@@ -636,7 +636,7 @@ function init(staticryptConfig, templateConfig) {
             var f = document.createElement('iframe');
             f.setAttribute('style', 'position:fixed;inset:0;width:100vw;height:100vh;border:0;margin:0;padding:0;');
             f.setAttribute('allow', 'fullscreen; clipboard-write');
-            f.srcdoc = plainHTML;
+            f.src = URL.createObjectURL(new Blob([plainHTML], {type: 'text/html'}));
             document.body.innerHTML = '';
             document.body.style.cssText = 'margin:0;overflow:hidden;';
             document.body.appendChild(f);
